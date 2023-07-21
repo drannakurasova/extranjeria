@@ -1,13 +1,20 @@
-ody {
+body {
     margin: 0;
-    background-color: rgb(109, 81, 81);
+    background-image: url("./images/startscreen.jpg");
+    background-position: center;
+    background-size: cover;
   }
   
   #start-btn, #restart-btn {
     background-color: rgb(202, 173, 27);
-    color: white;
-    padding: 20px;
-    font-size: 20px;
+    background-image: url("./images/startdoor.jpg");
+    background-position: center;
+    background-size: contain;
+    background-blend-mode:soft-light;
+    color: rgb(16, 16, 241);
+    padding: 50px;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-top: 40px;
     border-radius: 10px; 
   }
@@ -22,21 +29,23 @@ ody {
   
   #game-box {
     background-color: darkgray;
-    width:600px;
-    height:400px;
+    width:1000px;
+    height:500px;
   
     /* default settings for game box */
     overflow: hidden; /* this will prevent element from been visible outside the game box */
     position: relative; /* this will allow elements to be positioned relative to the game-box */
     user-select: none; /* this will prevent elements from being highlighted */
   
-    background-image: url("../images/bg.png");
+    background-image: url("./images/gamebackground.jpg");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
   
     /* si el fondo se fuese a mover, seria mejor añadirlo por medio de manipulacion de DOM */
   
   }
+
+  
   
   
   #game-screen, #gameover-screen {
