@@ -1,7 +1,7 @@
 # extranjeria
-https://trello.com/b/0srYCozu/ironhack-project-1
 a game aiming at annoying you rather than anything else
 
+https://trello.com/b/0srYCozu/ironhack-project-1
 https://excalidraw.com/#json=QTzNCQ7a66QPDgYXlG7fQ,3xCe_PzRs85MgfyUsgvAhw
 
 Extranjeria
