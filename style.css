@@ -20,11 +20,17 @@ body {
   }
   
   .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 50px;
+  }
+    
+  
+  #closed {
+    position: absolute;
   }
   
   #game-box {
@@ -40,8 +46,9 @@ body {
     background-image: url("./images/officegamebackground.jpg");
     background-position: center;
     background-size: cover;
-
+      
   }
+
 
   #counter {
     background-color: yellow;

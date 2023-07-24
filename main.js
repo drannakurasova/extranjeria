@@ -5,7 +5,8 @@ const startBtnNode = document.querySelector("#start-btn");
 const splashScreenNode = document.querySelector("#splash-screen");
 const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
-// const gameoverScreenNode = document.querySelector("#gameover-screen")
+const gameoverScreenNode = document.querySelector("#gameover-screen");
+const restartBtnNode = document.querySelector("#restart-btn");
 
 let gameObject = null; 
 
@@ -15,6 +16,7 @@ function startGame() {
   console.log("starting");
 
   splashScreenNode.style.display = "none";
+  gameoverScreenNode.style.display = "none";
   gameScreenNode.style.display = "flex";
 
 
@@ -24,26 +26,20 @@ function startGame() {
   gameObject.gameLoop()
 }
 
-// * ADD EVENT LISTENERS
+// * EVENT LISTENERS
 startBtnNode.addEventListener("click", startGame)
+restartBtnNode.addEventListener("click", startGame)
 
-// document.addEventListener("keyup", keyUpHandler, false);
-// let upPressed = false;
-// function keyUpHandler (event) {
-//     if (event.keyCode === 38) {
-//         upPressed = true;
-//     }
-// }
-//!! COME BACK HERE
-gameBoxNode.addEventListener('click', () => {
-    // let arrowKey = event.key;
-      
-    //     if (arrowKey === 'ArrowUp') {
+
+document.addEventListener ('keyup', (event) => {  //todo WHY DOCUNENT NOT GAMEBOXNODE
+
+      if (event.key === 'ArrowUp') {
         gameObject.character.moveUpEffect();   
         console.log ("pressin arrow up")
-    } )
-//   let character = new Character(); 
-//   if (gameObject.isGameOn === true) {
-//     gameObject.character.moveEffect()
-//   } 
+      } else if (event.key === 'ArrowDown') {
+        gameObject.character.moveDownEffect();   
+        console.log ("pressin arrow up")
+      }
+      } )
+
 

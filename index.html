@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-     <!-- SPLASH SCREEN -->
-     <div id="splash-screen" class="container">
-        <img src="./images/logo.png" width="600" alt="logo">
-        <button id="start-btn">¡Entrar!</button>
-      </div>
-    
-     
-    <!-- GAME SCREEN -->
-    
-    <div id="game-screen" class="container">
-        <div id="game-box">
-     
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen" class="container">
+      <img src="./images/logo.png" width="600" alt="logo" />
+      <button id="start-btn">¡Entrar!</button>
     </div>
 
-    <div id="counter">
+    <!-- GAME SCREEN -->
+
+    <div id="game-screen" class="container">
+     
+      <div id="game-box"></div>
+     
+      <div id="counter"></div>
+    
     </div>
 
     <!-- GAME OVER SCREEN -->
     <div id="gameover-screen" class="container">
-        <img src="./images/logo.png" width="600" alt="logo">
-        <button id="restart-btn">¡Entrar otra vez!</button>
-      </div>
+      <img src="./images/logo.png" width="600" alt="logo" />
+      <div id="closed"> <img src="./images/cerrado.png" width="200">  </div> 
+      <button id="restart-btn">¡Entrar otra vez!</button>
+    </div>
+    </div>
 
-
-  <script src="main.js"></script>  
-  <script src="game.js"></script>
-  <script src="character.js"></script>
-  <script src="obstacle.js"></script>
-  <script src="prize.js"></script>
-
-</body>
+    <script src="main.js"></script>
+    <script src="game.js"></script>
+    <script src="character.js"></script>
+    <script src="obstacle.js"></script>
+    <script src="prize.js"></script>
+  </body>
 </html>

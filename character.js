@@ -1,24 +1,20 @@
-console.log("trump is here.js")
+console.log("trump is here.js");
 
 class Character {
-
   constructor() {
-    console.log("trump constructor is here")
+    console.log("trump constructor is here");
 
-//!DOM! COME BACK HERE!
+    //!DOM! COME BACK HERE!
     this.node = document.createElement("img");
     this.node.src = "./images/trump.png";
-    gameBoxNode.append(this.node)
-
+    gameBoxNode.append(this.node);
 
     this.x = 100; // posicion eje X
     this.y = 80; // posicion eje Y
     this.w = 80; // ancho
     this.h = 85; // alto
 
-
-    this.moveSpeed = 2;
-
+    this.moveSpeed = 10;
 
     this.node.style.width = `${this.w}px`;
     this.node.style.height = `${this.h}px`;
@@ -27,26 +23,18 @@ class Character {
     this.node.style.left = `${this.x}px`;
   }
 
-
-
-//CHARACTER´s METHODS
+  //CHARACTER´s METHODS
   moveUpEffect = () => {
-
     this.y -= this.moveSpeed;
-    this.positionUpdate()
+    this.positionUpdate();
+  };
 
-  }
-
-//   moveDownEffect = () => {
-
-//     this.x -= this.moveSpeed;
-//     this.positionUpdate()
-
-//   }
+  moveDownEffect = () => {
+    this.y += this.moveSpeed;
+    this.positionUpdate();
+  };
 
   positionUpdate = () => {
     this.node.style.top = `${this.y}px`;
-
-  }
-
+  };
 }
