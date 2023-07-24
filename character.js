@@ -17,7 +17,7 @@ class Character {
     this.h = 85; // alto
 
 
-    this.moveSpeed = 40;
+    this.moveSpeed = 2;
 
 
     this.node.style.width = `${this.w}px`;
@@ -30,11 +30,19 @@ class Character {
 
 
 //CHARACTER´s METHODS
-  moveEffect = () => {
-    this.x -= this.moveSpeed;
+  moveUpEffect = () => {
+
+    this.y -= this.moveSpeed;
     this.positionUpdate()
 
   }
+
+//   moveDownEffect = () => {
+
+//     this.x -= this.moveSpeed;
+//     this.positionUpdate()
+
+//   }
 
   positionUpdate = () => {
     this.node.style.top = `${this.y}px`;

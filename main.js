@@ -7,7 +7,7 @@ const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
 // const gameoverScreenNode = document.querySelector("#gameover-screen")
 
-let gameObj = null; 
+let gameObject = null; 
 
 // * STATE MANAGEMENT FUNCTIONS
 function startGame() {
@@ -18,21 +18,32 @@ function startGame() {
   gameScreenNode.style.display = "flex";
 
 
-  gameObj = new Game(); //!COME BACK HERE
-  console.log(gameObj)
+  gameObject = new Game(); 
+  console.log(gameObject)
 
-  gameObj.gameLoop()
+  gameObject.gameLoop()
 }
 
 // * ADD EVENT LISTENERS
 startBtnNode.addEventListener("click", startGame)
-gameBoxNode.addEventListener("keydown", () => {
-    if (keydown.keyCode === 39) {
-        gameObj.character.moveEffect();   
-      }
 
-  let character = new Character(); //! COME BACK HERE
-  if (gameObj.isGameOn === true) {
-    gameObj.character.moveEffect()
-  } 
-})
+// document.addEventListener("keyup", keyUpHandler, false);
+// let upPressed = false;
+// function keyUpHandler (event) {
+//     if (event.keyCode === 38) {
+//         upPressed = true;
+//     }
+// }
+//!! COME BACK HERE
+gameBoxNode.addEventListener('click', () => {
+    // let arrowKey = event.key;
+      
+    //     if (arrowKey === 'ArrowUp') {
+        gameObject.character.moveUpEffect();   
+        console.log ("pressin arrow up")
+    } )
+//   let character = new Character(); 
+//   if (gameObject.isGameOn === true) {
+//     gameObject.character.moveEffect()
+//   } 
+
