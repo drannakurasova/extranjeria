@@ -57,13 +57,22 @@ class Game {
     });
   };
 
+
   gameOver = () => {
+    gameBoxNode.innerHTML = "";
+
     this.isGameOn = false; // detiene la recursion
     gameScreenNode.style.display = "none"; // ocultar la pantalla de juego
     gameoverScreenNode.style.display = "flex"; // mostrar la pantalla final
     console.log("game over");
   };
 
+  
+   setInterval ( () => { 
+    countdownNum = 0;
+    countdownNode.innerText = countdownNum;
+    countdownNum--;
+  },1000) 
   // LATER extrapointsPopUp, extrapointsVanish
 
   //GAME METHODS
@@ -88,5 +97,8 @@ class Game {
 
     this.collisionCharacterObstacle();
     this.collisionCharacterPrize();
+
+    this.countdown ();
+    // this.countFavorable ();
   };
 }

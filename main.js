@@ -7,12 +7,14 @@ const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
 const gameoverScreenNode = document.querySelector("#gameover-screen");
 const restartBtnNode = document.querySelector("#restart-btn");
+const counterNode= document.querySelector("#counter");
+const countdownNode = document.querySelector("#countdown");
 
 let gameObject = null; 
 
 // * STATE MANAGEMENT FUNCTIONS
 function startGame() {
-
+  alert (`¡Oh vosotros los que entráis, abandonad toda esperanza!`);
   console.log("starting");
 
   splashScreenNode.style.display = "none";
@@ -25,6 +27,11 @@ function startGame() {
 
   gameObject.gameLoop()
 }
+
+// function countFavorable () {
+//  let scoreCount = counterNode.createElement ("h3");
+//  scoreCount.innerText = 0;
+// }
 
 // * EVENT LISTENERS
 startBtnNode.addEventListener("click", startGame)
