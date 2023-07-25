@@ -6,16 +6,24 @@ const splashScreenNode = document.querySelector("#splash-screen");
 const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
 const gameoverScreenNode = document.querySelector("#gameover-screen");
-const restartBtnNode = document.querySelector("#restart-btn");
+const gamewonScreenNode = document.querySelector("#gamewon-screen");
+const restartBtn1Node = document.querySelector("#restart-btn1");
+const restartBtn2Node = document.querySelector("#restart-btn2");
 const counterNode= document.querySelector("#counter");
-const countdownNode = document.querySelector("#countdown");
+const timerNode = document.querySelector("#countdown");
 
-let countdownNodeNum = Number (countdownNode.innerHTML);
+
+
 
 let counterNodeNum = 0;
 let counterDisplayed = document.createElement ("h2");
 document.querySelector("#counter").append(counterDisplayed);
-counterDisplayed.innerHTML = counterNodeNum; //? do I need this here and in game?
+//? do I need this here and in game?
+
+let timerNodeNum = 60;
+let timerDisplayed = document.createElement ("h2");
+document.querySelector ("#timer").append(timerDisplayed);
+
 
 let gameObject = null; 
 
@@ -28,6 +36,7 @@ function startGame() {
 
   splashScreenNode.style.display = "none";
   gameoverScreenNode.style.display = "none";
+  gamewonScreenNode.style.display = "none";
   gameScreenNode.style.display = "flex";
 
 
@@ -37,14 +46,10 @@ function startGame() {
   gameObject.gameLoop()
 }
 
-// function countFavorable () {
-//  let scoreCount = counterNode.createElement ("h3");
-//  scoreCount.innerText = 0;
-// }
-
 // * EVENT LISTENERS
 startBtnNode.addEventListener("click", startGame)
-restartBtnNode.addEventListener("click", startGame)
+restartBtn1Node.addEventListener("click", startGame)
+restartBtn2Node.addEventListener("click", startGame)
 
 
 document.addEventListener ('keyup', (event) => {  //todo WHY DOCUNENT NOT GAMEBOXNODE

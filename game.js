@@ -52,46 +52,45 @@ class Game {
         this.character.y < eachPrize.y + eachPrize.h &&
         this.character.y + this.character.h > eachPrize.y
       ) {
-        counterNodeNum++; 
+        counterNodeNum++;
         counterDisplayed.innerHTML = counterNodeNum;
-        console.log (counterNodeNum)
-        
-        if (countdownNodeNum = 20) {
-      this.gameWon ()
-    };
+        console.log(counterNodeNum);
+
+        if ((counterNodeNum = 500)) {
+          this.gameWon();
+        }
       }
-    })
-    
-    
+    });
   };
- 
+
   gameWon = () => {
     gameBoxNode.innerHTML = "";
     this.isGameOn = false; // detiene la recursion
-    gameScreenNode.style.display = "none"; 
-    gameoverScreenNode.style.display = "flex"; 
-    document.getElementById("closed").src="./images/favorable.png";
-  }
+    gameScreenNode.style.display = "none";
+    gameoverScreenNode.style.display = "none";
+    gamewonScreenNode.style.display = "flex";
 
+    // document.getElementById("closed").src="./images/favorable.png";
+  };
 
   gameOver = () => {
     gameBoxNode.innerHTML = "";
 
     this.isGameOn = false; // detiene la recursion
     gameScreenNode.style.display = "none"; // ocultar la pantalla de juego
+    gamewonScreenNode.style.display = "none";
     gameoverScreenNode.style.display = "flex"; // mostrar la pantalla final
     console.log("game over");
   };
+ 
+  timer = () => { 
+    timerNodeNum --
+    timerDisplayed.innerHTML = timerNodeNum;
+    console.log (timerNodeNum)
+  }
+  
 
-  // updateTime = () => {
-  // if(countdownNodeNum===0){
-  // this.gameOver ();
-  // }else{
-  // countdownNodeNum -= 1;
-  // setTimeout("updateTime()",1000);
-  // }
-  // }
-  // LATER extrapointsPopUp, extrapointsVanish
+  // LATER extrapointsPopUp, extrapointsVanish, music, other characters
 
   //GAME METHODS
   gameLoop = () => {
@@ -105,20 +104,18 @@ class Game {
     this.obstaclePopUp();
     this.prizePopUp();
 
-    // this.obstaclesArr.forEach((eachObstacle) => {
-    //   eachObstacle.automaticMovement();
-    // });
+    this.obstaclesArr.forEach((eachObstacle) => {
+      eachObstacle.automaticMovement();
+    });
 
     this.prizesArr.forEach((eachPrize) => {
       eachPrize.automaticMovement();
     });
 
-    // this.collisionCharacterObstacle();
+    this.collisionCharacterObstacle();
     this.collisionCharacterPrize();
-
- 
-
-    // this.updateTime ();
-    // this.countFavorable ();
+    // setTimeout (this.timer, 1000)
+   
   };
-}
+
+ }

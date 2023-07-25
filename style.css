@@ -19,6 +19,7 @@ h1 {
   border-style: dotted;
 }
 
+
 #instructions {
   color: antiquewhite;
   border-style: groove;
@@ -26,7 +27,8 @@ h1 {
 }
 
 #start-btn,
-#restart-btn {
+#restart-btn1,
+#restart-btn2 {
   background-color: rgb(202, 173, 27);
   background-image: url("./images/startdoor.jpg");
   background-position: center;
@@ -85,7 +87,7 @@ h1 {
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 }
 
-#countdown { 
+#timer { 
   color: aliceblue;
 background-color: blue;
 top: 20px;
@@ -103,7 +105,12 @@ align-items: center;
 font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 }
 
+#favorable {
+  padding: 30px;
+}
+
 #game-screen,
-#gameover-screen {
+#gameover-screen,
+#gamewon-screen {
   display: none; /* los hace desaparecer temporalmente del dom */
 }

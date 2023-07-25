@@ -14,7 +14,7 @@ class Character {
     this.w = 80; // ancho
     this.h = 85; // alto
 
-    this.moveSpeed = 10;
+    this.moveSpeed = 20;
 
     this.node.style.width = `${this.w}px`;
     this.node.style.height = `${this.h}px`;
