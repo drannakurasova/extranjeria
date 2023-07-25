@@ -10,7 +10,16 @@ const restartBtnNode = document.querySelector("#restart-btn");
 const counterNode= document.querySelector("#counter");
 const countdownNode = document.querySelector("#countdown");
 
+let countdownNodeNum = Number (countdownNode.innerHTML);
+
+let counterNodeNum = 0;
+let counterDisplayed = document.createElement ("h2");
+document.querySelector("#counter").append(counterDisplayed);
+counterDisplayed.innerHTML = counterNodeNum; //? do I need this here and in game?
+
 let gameObject = null; 
+
+
 
 // * STATE MANAGEMENT FUNCTIONS
 function startGame() {
