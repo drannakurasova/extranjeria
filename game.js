@@ -45,7 +45,10 @@ class Game {
   };
 
   collisionCharacterPrize = () => {
+ 
     this.prizesArr.forEach((eachPrize) => {
+      
+
       if (
         this.character.x < eachPrize.x + eachPrize.w &&
         this.character.x + this.character.w > eachPrize.x &&
@@ -53,18 +56,19 @@ class Game {
         this.character.y + this.character.h > eachPrize.y
       ) {
         counterNodeNum++;
-        counterDisplayed.innerHTML = counterNodeNum;
+        counterDisplayed.innerHTML = "FAVORABLE: " + counterNodeNum;
         console.log(counterNodeNum);
 
-        if ((counterNodeNum = 500)) {
+        
+       if ((counterNodeNum === 50)) {
           this.gameWon();
         }
-      }
+      } 
     });
   };
 
   gameWon = () => {
-    gameBoxNode.innerHTML = "";
+    gameBoxNode.innerHTML =`<div id="counter"> </div>, <div id="timer"> </div>`
     this.isGameOn = false; // detiene la recursion
     gameScreenNode.style.display = "none";
     gameoverScreenNode.style.display = "none";
@@ -74,7 +78,13 @@ class Game {
   };
 
   gameOver = () => {
-    gameBoxNode.innerHTML = "";
+    gameBoxNode.innerHTML =  `<div id="counter"> </div>, <div id="timer"> </div>`
+   
+    // this.character.element.remove();
+    // this.obstaclesArr.forEach(function (obstacle) {
+    //   obstacle.element.remove();
+    // });
+
 
     this.isGameOn = false; // detiene la recursion
     gameScreenNode.style.display = "none"; // ocultar la pantalla de juego
@@ -83,11 +93,15 @@ class Game {
     console.log("game over");
   };
  
-  timer = () => { 
-    timerNodeNum --
-    timerDisplayed.innerHTML = timerNodeNum;
-    console.log (timerNodeNum)
-  }
+  // timer = () => { 
+  //   if (timerNodeNum > 0) { 
+  //   setInterval ( () =>
+  //   timerNodeNum - -
+  //   , 1000  )
+  //  } else if (timerNodeNum = 0) {
+  //     return 0
+  //   }
+  // }
   
 
   // LATER extrapointsPopUp, extrapointsVanish, music, other characters
@@ -114,8 +128,7 @@ class Game {
 
     this.collisionCharacterObstacle();
     this.collisionCharacterPrize();
-    // setTimeout (this.timer, 1000)
-   
+    // this.timer ()
   };
 
  }

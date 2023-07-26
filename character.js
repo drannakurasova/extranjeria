@@ -3,14 +3,13 @@ console.log("trump is here.js");
 class Character {
   constructor() {
     console.log("trump constructor is here");
-
-    //!DOM! COME BACK HERE!
+    
     this.node = document.createElement("img");
     this.node.src = "./images/trump.png";
     gameBoxNode.append(this.node);
 
-    this.x = 100; // posicion eje X
-    this.y = 80; // posicion eje Y
+    this.x = 400; // posicion eje X
+    this.y = 120; // posicion eje Y
     this.w = 80; // ancho
     this.h = 85; // alto
 
