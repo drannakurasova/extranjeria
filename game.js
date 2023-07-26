@@ -43,6 +43,7 @@ class Game {
         this.character.y < eachObstacle.y + eachObstacle.h &&
         this.character.y + this.character.h > eachObstacle.y
       ) {
+        myBlow.play ()
         this.gameOver();
       }
     });
@@ -57,11 +58,13 @@ class Game {
         this.character.y + this.character.h > eachPrize.y
       ) {
         eachPrize.node.remove();
-        this.prizesArr.splice(this.prizesArr.indexOf(eachPrize), 1); //?? WHIY THIS WORKS
+        this.prizesArr.splice(this.prizesArr.indexOf(eachPrize), 1); 
+        myYeah.play ()
+
 
         this.counterNodeNum++;
         //  console.log("prize collision" + this.counterNodeNum);
-        counterDisplayed.innerHTML = "FAVORABLE: " + this.counterNodeNum; //!! REMAINS 1!
+        counterDisplayed.innerHTML = "FAVORABLE: " + this.counterNodeNum; 
 
         if (this.counterNodeNum === 5) {
           this.gameWon();
@@ -81,6 +84,7 @@ class Game {
     gamewonScreenNode.style.display = "flex";
 
     myAudio.pause ()
+    myPipe.play ()
 
     // document.getElementById("closed").src="./images/favorable.png";
   };

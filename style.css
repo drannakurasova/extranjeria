@@ -3,11 +3,15 @@ body {
   background-image: url("./images/startscreen.jpg");
   background-position: center;
   background-size: cover;
+  display:flex;
+  flex-flow: row, wrap;
+  align-items:center;
 }
 
 h1 {
   display: flex;
-  align-items: center;
+
+  text-align: center;
   background-color: blue;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -70,13 +74,20 @@ h1 {
   background-size: cover;
 }
 
+.elements {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  align-items: flex-start ;
+  
+
+}
+
 #counter {
   background-color: yellow;
   top: 20px;
   width: 150px;
   height: 80px;
-  margin-top: 10px;
-  margin-left: 1800px;
   border-radius: 20%;
   border-color: blue;
   border-style: double;
@@ -93,8 +104,6 @@ background-color: blue;
 top: 20px;
 width: 80px;
 height: 80px;
-margin-top: 10px;
-margin-left: 2000px;
 border-radius: 50%;
 border-color: yellow;
 border-style: double;

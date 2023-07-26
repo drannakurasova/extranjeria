@@ -13,6 +13,10 @@ const counterNode = document.querySelector("#counter");
 const timerNode = document.querySelector("#timer");
 const myAudio = document.querySelector('#audio')
 
+const myYeah = new Audio ("yeah.mp3")
+const myBlow = new Audio ("blow.mp3")
+const myPipe = new Audio ("badpipe.mp3")
+
 let counterDisplayed = document.createElement("h2");
 document.querySelector("#counter").append(counterDisplayed);
 
