@@ -1,9 +1,9 @@
-console.log("trump is here.js");
+// console.log("trump is here.js");
 
 class Character {
   constructor() {
-    console.log("trump constructor is here");
-    
+    // console.log("trump constructor is here");
+
     this.node = document.createElement("img");
     this.node.src = "./images/trump.png";
     gameBoxNode.append(this.node);

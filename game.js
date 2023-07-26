@@ -1,13 +1,17 @@
 class Game {
   constructor() {
     this.character = new Character();
-    console.log("this trump");
+    // console.log("this trump");
 
     this.obstaclesArr = [];
     this.prizesArr = [];
 
     this.frames = 0;
     this.isGameOn = true;
+
+    this.count = 60;
+
+    this.counterNodeNum = 0;
   }
 
   obstaclePopUp = () => {
@@ -45,74 +49,81 @@ class Game {
   };
 
   collisionCharacterPrize = () => {
- 
     this.prizesArr.forEach((eachPrize) => {
-      
-
       if (
         this.character.x < eachPrize.x + eachPrize.w &&
         this.character.x + this.character.w > eachPrize.x &&
         this.character.y < eachPrize.y + eachPrize.h &&
         this.character.y + this.character.h > eachPrize.y
       ) {
-        counterNodeNum++;
-        counterDisplayed.innerHTML = "FAVORABLE: " + counterNodeNum;
-        console.log(counterNodeNum);
+        eachPrize.node.remove();
+        this.prizesArr.splice(this.prizesArr.indexOf(eachPrize), 1); //?? WHIY THIS WORKS
 
-        
-       if ((counterNodeNum === 50)) {
+        this.counterNodeNum++;
+        //  console.log("prize collision" + this.counterNodeNum);
+        counterDisplayed.innerHTML = "FAVORABLE: " + this.counterNodeNum; //!! REMAINS 1!
+
+        if (this.counterNodeNum === 5) {
           this.gameWon();
         }
-      } 
+      }
     });
   };
 
   gameWon = () => {
-    gameBoxNode.innerHTML =`<div id="counter"> </div>, <div id="timer"> </div>`
+    gameBoxNode.innerHTML = "";
     this.isGameOn = false; // detiene la recursion
     gameScreenNode.style.display = "none";
     gameoverScreenNode.style.display = "none";
+    counterNode.style.display = "none";
+    timerNode.style.display = "none";
+
     gamewonScreenNode.style.display = "flex";
+
+    myAudio.pause ()
 
     // document.getElementById("closed").src="./images/favorable.png";
   };
 
   gameOver = () => {
-    gameBoxNode.innerHTML =  `<div id="counter"> </div>, <div id="timer"> </div>`
-   
-    // this.character.element.remove();
-    // this.obstaclesArr.forEach(function (obstacle) {
-    //   obstacle.element.remove();
-    // });
-
+    gameBoxNode.innerHTML = "";
 
     this.isGameOn = false; // detiene la recursion
     gameScreenNode.style.display = "none"; // ocultar la pantalla de juego
     gamewonScreenNode.style.display = "none";
+    counterNode.style.display = "none";
+    timerNode.style.display = "none";
     gameoverScreenNode.style.display = "flex"; // mostrar la pantalla final
-    console.log("game over");
+    myAudio.pause ()
+    // this.character.element.remove();
+    // this.obstaclesArr.forEach( (eachObstacle) => {
+    //   eachObstacle.element.remove();
+    // });
   };
- 
-  // timer = () => { 
-  //   if (timerNodeNum > 0) { 
-  //   setInterval ( () =>
-  //   timerNodeNum - -
-  //   , 1000  )
-  //  } else if (timerNodeNum = 0) {
-  //     return 0
-  //   }
-  // }
-  
 
+  timer = () => {
+    if (this.frames % 60 === 0) {
+      this.count--;
+      timerNode.innerText = this.count;
+    } else if (this.count === 0) {
+      this.gameOver();
+    }
+  };
+
+   mosquitoSound = () => {
+   if (this.gameOn === false) {
+   myAudio.pause ()
+   } else {
+    myAudio.play()
+   }
+   }
   // LATER extrapointsPopUp, extrapointsVanish, music, other characters
 
   //GAME METHODS
   gameLoop = () => {
     this.frames++;
 
-    if (this.isGameOn === true) {
-      requestAnimationFrame(this.gameLoop); //??
-    }
+    this.mosquitoSound ();
 
     //OBSTACLE and PRIZES
     this.obstaclePopUp();
@@ -128,7 +139,11 @@ class Game {
 
     this.collisionCharacterObstacle();
     this.collisionCharacterPrize();
-    // this.timer ()
-  };
 
- }
+    this.timer();
+
+    if (this.isGameOn === true) {
+      requestAnimationFrame(this.gameLoop); //??
+    }
+  };
+}
