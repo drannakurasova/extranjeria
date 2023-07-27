@@ -132,7 +132,7 @@ class Game {
   gameLoop = () => {
     this.frames++;
 
-    // this.mosquitoSound();
+    this.mosquitoSound();
 
     //OBSTACLE and PRIZES
     this.obstaclePopUp();
