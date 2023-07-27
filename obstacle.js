@@ -30,8 +30,8 @@ class Obstacle {
   };
 
   automaticMovementFaster = () => {
-    this.x += 10;
-    this.y += 10;
+    this.x += 20;
+    this.y += 2;
     // if (this.x === gameBoxNode - 20 || this.y === gameBoxNode - 20) {
     //   this.x += 6;
     //   this.y += 1;

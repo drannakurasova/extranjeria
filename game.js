@@ -67,11 +67,7 @@ class Game {
         //  console.log("prize collision" + this.counterNodeNum);
         counterDisplayed.innerHTML = "FAVORABLE: " + this.counterNodeNum;
 
-        if (this.counterNodeNum === 3) {
-          this.obstaclesArr.forEach((eachObstacle) => {
-            eachObstacle.automaticMovementFaster();
-          });
-        } else if (this.counterNodeNum === 5) {
+        if (this.counterNodeNum === 5) {
           this.gameWon();
         }
       }
@@ -123,7 +119,7 @@ class Game {
     if (this.gameOn === false) {
       myAudio.pause();
     } else {
-      myAudio.play()
+      myAudio.play();
       myAudio.volume = 0.5;
     }
   };
@@ -138,13 +134,23 @@ class Game {
     this.obstaclePopUp();
     this.prizePopUp();
 
+    this.prizesArr.forEach((eachPrize) => {
+      eachPrize.automaticMovement();
+    });
+
     this.obstaclesArr.forEach((eachObstacle) => {
       eachObstacle.automaticMovement();
     });
 
-    this.prizesArr.forEach((eachPrize) => {
-      eachPrize.automaticMovement();
-    });
+    // if (this.counterNodeNum >= 3) {
+    //  this.obstaclesArr.forEach((eachObstacle) => {
+    //   eachObstacle.automaticMovementFaster();
+    // })
+    // }  else {
+    //   this.obstaclesAr.forEach((eachObstacle) => {
+    //     eachObstacle.automaticMovement()
+    //   } )
+    // };
 
     this.collisionCharacterObstacle();
     this.collisionCharacterPrize();
