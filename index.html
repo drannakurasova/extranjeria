@@ -7,18 +7,51 @@
   <div class ="elements">  
     <div id="counter"> </div>
     <div id="timer"> </div>
-    <link rel="stylesheet" href="style.css" />
  </div>  
 
+<link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+
+ 
+
     <!-- SPLASH SCREEN -->
-    <div id="splash-screen" class="container">
+    <div id="splash-screen1" class="container">
       <img src="./images/logo.png" width="600" alt="logo" />
-      <h1> A ver si consigues obtener 5 papeles estampados y evitar los denegados para obtener el favorable en 1 minuto o si tendrás que volver mañana </h1>
-      <h1 id="instructions"> Usa flechas up y down para moverte</h1>
-      <button id="start-btn">¡Entrar!</button>
+      <h1 id="instructions"> Primero, indetifícate</h1>
+      <button id="start-btn1" class="start-button">¡Presiona aqui!</button>
     </div>
+
+
+  <!-- CHOOSE YOUR CHARACTER SCREEN -->
+   <div id="character-container">
+    
+   <div id="image">
+   <h1 id ="name"> </h1>
+  <img id = "img" src="./images/trump-first.jpg" alt="">
+   </div>
+
+   
+  <div id="controls" class="button" >
+    <button id="trump-first" onclick="chooseCharacter('trump')">Trump</button>
+   <button id="ceasar-first" onclick="chooseCharacter('ceasar')">Ceasar</button>  
+   
+  <div> <button id="start-btn2" class="start-button">Soy... </button>   </div>   
+   
+</div>
+
+
+   </div>
+
+      <!-- START GAME SCREEN -->
+      <div id="splash-screen2" class="container">
+        <img src="./images/logo.png" width="600" alt="logo" />
+        <h1> A ver si consigues obtener 5 papeles estampados y evitar los denegados para obtener el favorable en 1 minuto o si tendrás que volver mañana </h1>
+        <h1 id="instructions"> Usa flechas up y down para moverte</h1>
+        <button id="start-btn3" class="start-button">¡Entrar!</button>
+      </div>
+  
 
     <!-- GAME SCREEN -->
 
@@ -35,7 +68,7 @@
     <div id="gameover-screen" class="container">
       <img src="./images/logo.png" width="600" alt="logo" />
       <div id="closed"> <img src="./images/cerrado.png" width="200">  </div> 
-      <button id="restart-btn1">¡Entrar otra vez!</button>
+      <button id="restart-btn1" class="start-button">¡Entrar otra vez!</button>
     </div>
     </div>
 
@@ -43,7 +76,7 @@
         <!-- GAME WON SCREEN -->
    <div id="gamewon-screen" class="container">
       <div id="favorable"> <img src="./images/favorable.png" width="800">  </div> 
-       <button id="restart-btn2">¡Entrar otra vez!</button>
+       <button id="restart-btn2" class="start-button">¡Entrar otra vez!</button>
     </div>
     </div>
 

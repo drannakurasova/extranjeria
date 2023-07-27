@@ -3,47 +3,169 @@ body {
   background-image: url("./images/startscreen.jpg");
   background-position: center;
   background-size: cover;
-  display:flex;
-  flex-flow: row, wrap;
-  align-items:center;
+  align-items: center;
+  position: relative;
 }
 
 h1 {
   display: flex;
-
   text-align: center;
   background-color: blue;
+  font-size: 50px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-style: italic;
   font-stretch: expanded;
   margin-top: 70px;
-  padding: 5px;
+  padding: 10px 10px;
   color: yellow;
   border-style: dotted;
+  border-radius: 20px;
 }
-
 
 #instructions {
   color: antiquewhite;
   border-style: groove;
   font-style: normal;
+  border-radius: 20px;
 }
 
-#start-btn,
+#start-btn1,
+#start-btn2,
+#start-btn3,
 #restart-btn1,
 #restart-btn2 {
   background-color: rgb(202, 173, 27);
-  background-image: url("./images/startdoor.jpg");
+  /* background-image: url("./images/startdoor.jpg");
   background-position: center;
   background-size: contain;
-  background-blend-mode: soft-light;
+  background-blend-mode: soft-light; */
+  background-image: linear-gradient(rgb(219, 158, 5), rgb(217, 217, 156));
   color: rgb(16, 16, 241);
   padding: 50px;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   margin-top: 40px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#start-btn2 {
+  width: 300px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+#start-btn1:hover {
+  color: rgb(79, 79, 237);
+  font-size: 50px;
+}
+
+#start-btn2:hover {
+  color: rgb(79, 79, 237);
+  font-size: 45px;
+}
+#start-btn3:hover {
+  color: rgb(79, 79, 237);
+  font-size: 50px;
+}
+#restart-btn1:hover {
+  color: rgb(79, 79, 237);
+  font-size: 50px;
+}
+
+#restart-btn2:hover {
+  color: rgb(79, 79, 237);
+  font-size: 50px;
+}
+
+
+#character-container {
+  width: 800px;
+  height: 800px;  
+  position: relative;
+  background-image: url("images/officegamebackground.jpg");
+  background-position: center;
+  animation: slide-in 5s linear;
+  border: 5px solid yellow;
+  text-align: center ;
+  animation: slide-in 1000ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+}
+
+#image {
+  width: 80%;
+  height: 80%;
+  overflow:hidden;
+  position: relative;
+}
+
+#img {
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  height: auto;
+  max-width: 200px;
+  animation: gloweffect 2s inifnite;
+}
+
+@keyframes gloweffect {
+  0%, 100% {filter:drop-shadow(0 0 0.35rem rgb(60, 0, 255));}
+  25% {filter: drop-shadow(0 0 0.65rem yellow);}
+  50% {filter: drop-shadow(0 0 0.85rem white);}
+}
+
+#name {
+  position: absolute;
+  z-index: 99999; /*for gloweffect to be not behind the card */
+  font-size: 30pt;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  left: 25%;
+  bottom: 10%;
+  color: yellow;
+}
+
+#trump-first, #ceasar-first {
+position: relative;
+padding: 10px 15px;
+color: yellow;
+font-size: 40px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+border-radius: 10%;
+background-color: rgb(22, 22, 111);
+align-items: center;
+}
+
+#trump-first:hover {
+  background-color: rgb(79, 79, 237);
+  font-size: 50px;
+}
+
+#ceasar-first:hover {
+  background-color: rgb(79, 79, 237);
+  font-size: 50px;
+}
+
+#start-btn3 {
+display: flex;
+flex-direction: column;
+align-items: end;
 }
 
 .container {
@@ -68,50 +190,52 @@ h1 {
   overflow: hidden; /* this will prevent element from been visible outside the game box */
   position: relative; /* this will allow elements to be positioned relative to the game-box */
   user-select: none; /* this will prevent elements from being highlighted */
-
   background-image: url("./images/officegamebackground.jpg");
   background-position: center;
-  background-size: cover;
-}
+ }
+
 
 .elements {
   display: flex;
   flex-flow: column wrap;
-  justify-content: flex-end;
-  align-items: flex-start ;
-  
-
+  /* justify-content:center; */
+  align-items: center;
 }
 
 #counter {
   background-color: yellow;
+  background-image: linear-gradient(to right, rgb(255, 187, 0),rgb(249, 249, 245));
   top: 20px;
   width: 150px;
   height: 80px;
   border-radius: 20%;
-  border-color: blue;
+  border-color: rgb(239, 237, 231);
+  border-width: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  animation: slide-in 1000ms;
+}
+
+#timer {
+  position: relative;
+  color: aliceblue;
+  background-color: blue;
+  background-image: linear-gradient(to right, darkblue,lightblue);
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-color: rgb(245, 245, 235);
   border-style: double;
   border-width: 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: center; 
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
-}
-
-#timer { 
-  color: aliceblue;
-background-color: blue;
-top: 20px;
-width: 80px;
-height: 80px;
-border-radius: 50%;
-border-color: yellow;
-border-style: double;
-border-width: 5px;
-display: flex;
-justify-content: center;
-align-items: center;
-font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  justify-content: center;
+  align-items: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 50px;
+  animation: slide-in 1000ms;
 }
 
 #favorable {
@@ -120,6 +244,8 @@ font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 
 #game-screen,
 #gameover-screen,
-#gamewon-screen {
-  display: none; /* los hace desaparecer temporalmente del dom */
+#gamewon-screen,
+#character-container,
+#splash-screen2 {
+  display: none;
 }
