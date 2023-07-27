@@ -22,7 +22,7 @@ class Prize {
       this.node.style.left = `${this.x}px`;
     }
   
-    // OBSTACLE´S METHODS
+    // PRIZE´S METHODS
     automaticMovement = () => {
       this.x -= 8;
       this.y += 2;

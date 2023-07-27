@@ -65,7 +65,7 @@ h1 {
 
 #start-btn2:hover {
   color: rgb(79, 79, 237);
-  font-size: 45px;
+  font-size: 35px;
 }
 #start-btn3:hover {
   color: rgb(79, 79, 237);
@@ -83,13 +83,8 @@ h1 {
 
 
 #character-container {
-  width: 800px;
-  height: 800px;  
   position: relative;
-  background-image: url("images/officegamebackground.jpg");
-  background-position: center;
   animation: slide-in 5s linear;
-  border: 5px solid yellow;
   text-align: center ;
   animation: slide-in 1000ms;
   display: flex;
@@ -97,6 +92,18 @@ h1 {
   justify-content: center;
   align-items: center;
 
+}
+
+#character-screen {
+  background-image: url("images/officegamebackground.jpg");
+  background-position: center;
+  border: 5px solid yellow;
+  height: 800px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes slide-in {
@@ -109,30 +116,30 @@ h1 {
 }
 
 #image {
-  width: 80%;
-  height: 80%;
-  overflow:hidden;
+ display:flex;
+ flex-direction: column;
+ align-items: center;
   position: relative;
 }
 
 #img {
-  z-index: 99999;
+  /* z-index: 99999; */
   display: flex;
   align-items: center;
   margin-top: 10px;
   height: auto;
   max-width: 200px;
-  animation: gloweffect 2s inifnite;
+  /* animation: gloweffect 2s inifnite; */
 }
-
+/* 
 @keyframes gloweffect {
   0%, 100% {filter:drop-shadow(0 0 0.35rem rgb(60, 0, 255));}
   25% {filter: drop-shadow(0 0 0.65rem yellow);}
   50% {filter: drop-shadow(0 0 0.85rem white);}
-}
+} */
 
 #name {
-  position: absolute;
+  /* position: absolute; */
   z-index: 99999; /*for gloweffect to be not behind the card */
   font-size: 30pt;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
@@ -148,6 +155,7 @@ color: yellow;
 font-size: 40px;
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 border-radius: 10%;
+margin-top: 10px;
 background-color: rgb(22, 22, 111);
 align-items: center;
 }
@@ -181,6 +189,15 @@ align-items: end;
   position: absolute;
 }
 
+/* @keyframes constant-slide {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-1000px); /* The image width */
+  /* }
+} */ 
+
 #game-box {
   background-color: darkgray;
   width: 1000px;
@@ -190,8 +207,9 @@ align-items: end;
   overflow: hidden; /* this will prevent element from been visible outside the game box */
   position: relative; /* this will allow elements to be positioned relative to the game-box */
   user-select: none; /* this will prevent elements from being highlighted */
-  background-image: url("./images/officegamebackground.jpg");
-  background-position: center;
+  background-image: url("./images/officegamebackground.jpg"); 
+  background-size: contain/*repeat-x*/;
+  /*animation: constant-slide 3s linear infinite; */
  }
 
 

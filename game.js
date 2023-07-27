@@ -43,7 +43,8 @@ class Game {
         this.character.y < eachObstacle.y + eachObstacle.h &&
         this.character.y + this.character.h > eachObstacle.y
       ) {
-        myBlow.play ()
+        myBlow.play();
+        // myBlow.volume = 0.05;
         this.gameOver();
       }
     });
@@ -58,15 +59,19 @@ class Game {
         this.character.y + this.character.h > eachPrize.y
       ) {
         eachPrize.node.remove();
-        this.prizesArr.splice(this.prizesArr.indexOf(eachPrize), 1); 
-        myYeah.play ()
-
+        this.prizesArr.splice(this.prizesArr.indexOf(eachPrize), 1);
+        myYeah.play();
+        // myYeah.volume = 0.05;
 
         this.counterNodeNum++;
         //  console.log("prize collision" + this.counterNodeNum);
-        counterDisplayed.innerHTML = "FAVORABLE: " + this.counterNodeNum; 
+        counterDisplayed.innerHTML = "FAVORABLE: " + this.counterNodeNum;
 
-        if (this.counterNodeNum === 5) {
+        if (this.counterNodeNum === 3) {
+          this.obstaclesArr.forEach((eachObstacle) => {
+            eachObstacle.automaticMovementFaster();
+          });
+        } else if (this.counterNodeNum === 5) {
           this.gameWon();
         }
       }
@@ -83,8 +88,8 @@ class Game {
 
     gamewonScreenNode.style.display = "flex";
 
-    myAudio.pause ()
-    myPipe.play ()
+    myAudio.pause();
+    myPipe.play();
 
     // document.getElementById("closed").src="./images/favorable.png";
   };
@@ -98,7 +103,7 @@ class Game {
     counterNode.style.display = "none";
     timerNode.style.display = "none";
     gameoverScreenNode.style.display = "flex"; // mostrar la pantalla final
-    myAudio.pause ()
+    myAudio.pause();
     // this.character.element.remove();
     // this.obstaclesArr.forEach( (eachObstacle) => {
     //   eachObstacle.element.remove();
@@ -114,20 +119,20 @@ class Game {
     }
   };
 
-   mosquitoSound = () => {
-   if (this.gameOn === false) {
-   myAudio.pause ()
-   } else {
-    myAudio.play()
-   }
-   }
-  // LATER extrapointsPopUp, extrapointsVanish, music, other characters
+  mosquitoSound = () => {
+    if (this.gameOn === false) {
+      myAudio.pause();
+    } else {
+      myAudio.play()
+      myAudio.volume = 0.5;
+    }
+  };
 
   //GAME METHODS
   gameLoop = () => {
     this.frames++;
 
-    this.mosquitoSound ();
+    // this.mosquitoSound();
 
     //OBSTACLE and PRIZES
     this.obstaclePopUp();
