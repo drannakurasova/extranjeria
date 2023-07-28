@@ -1,9 +1,8 @@
 # extranjeria
 a game aiming at annoying you rather than anything else
 
-https://trello.com/b/0srYCozu/ironhack-project-1
 
-https://excalidraw.com/#json=QTzNCQ7a66QPDgYXlG7fQ,3xCe_PzRs85MgfyUsgvAhw
+
 
 Extranjeria
       -characters (assigned randomly)
@@ -28,31 +27,47 @@ Extranjeria
 
 ## [Play the Game!](https://drannakurasova.github.io/extranjeria/)
 
-![Game Logo](images/logo.png)
+![Game Logo](./images/logo.png)
 
 
 # Description
 
-Add a simple description of your game here.
+This game aims at annoying you rather than anything else // Este juego está hecho para frustrarte más que nada
 
 
 # Main Functionalities
 
-- List here the main functionalities your game will have.
+- Puedes (intentar a) elegir tu personaje
+- Hay una cuenta atrás de 60 segundos para obtener 5 trofeos
+- También hay cuenta de los trofeos obtenidos
+- Van apareciendo los obstáculos
+- El personaje se mueve arriba y abajo
+- Si colisionas con un papel denegado o no obtienes 5 papeles antes de que se acabe un minuto, pierdes
 
 # Backlog Functionalities
 
-- List here all functionalities you wish to add to your proyect later.
+- Tener más personajes y la asignación aleatoria
+- La velocidad sube en cuanto obtengas 3 papeles
+- Otro nivel
 
 # Technologies used
 
-- List here all technologies used in the project like HTML, CSS, Javascript, DOM Manipulation, Local Storage, etc
+- HTML
+- CSS
+- DOM Manipulation
+- JS Classes
+- JS Audio ()
 
 # States
 
-- List here the different screens of your game.
+- Start Screen
+- Choose Your Character Screen
+- Instructions Screen
+- Game Screen
+- Game Won Screen
+- Gome Over Screen
 
-# Proyect Structure
+# Project Structure
 
 - List here sections for your your different JS files.
 - One for main.js to manage DOM elements, one for the Game class and one for each other class file of your game.
@@ -62,36 +77,79 @@ Example:
 
 ## main.js
 
-- list here the functions names of your main.js
+-chooseCharacter();
+-enterGame();
+-startGame();
+
 
 ## Game.js
 
 - Game () {
-    this.player;
+    this.character;
+    this.ObstaclesArr;
+    this.prizesArr;
+    this.frames;
+    this.count;
+    this.counterNodeNum;
+
+    this.obstaclePopUp();
+    this.prizePopUp();
+    this.collisionCharacterObstacle();
+    this.collisionCharacterPrize();
+
+    gameWon();
+    gameOver();
+    timer();
+    mosquitoSound();
+    gameLoop()
 }
+- 
 
-## Player.js 
+## Character.js 
 
-- Player () {
+- Character () {
     this.x;
     this.y;
     this.w;
     this.h;
 }
-- drawPlayer () {}
-- movePlayer () {}
+- moveUpEffect () 
+- moveDownEffect ()
+- positionUpdate() 
+
+## Prize.js 
+
+- Prize () {
+    this.x;
+    this.y;
+    this.w;
+    this.h;
+}
+- automaticMovement ()
+- positionUpdate() 
+
+## Obstacle.js 
+
+- CharaObstaclecter () {
+    this.x;
+    this.y;
+    this.w;
+    this.h;
+}
+- automaticMovement ()
+- positionUpdate() 
 
 
 # Extra Links 
 
 ### Sketch
-[Link](www.your-excalidraw-url-here.com)
+[Link](https://excalidraw.com/#json=QTzNCQ7a66QPDgYXlG7fQ,3xCe_PzRs85MgfyUsgvAhw)
 
 ### Trello
-[Link](www.your-trello-url-here.com)
-
+[Link](https://trello.com/b/0srYCozu/ironhack-project-1
+)
 ### Slides
 [Link](www.your-slides-url-here.com)
 
 ## Deploy
-[Link](www.your-deploy-url-here.com)
+[Link](https://drannakurasova.github.io/extranjeria/)
