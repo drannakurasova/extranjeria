@@ -45,12 +45,6 @@ This game aims at annoying you rather than anything else // Este juego está hec
 
 # Project Structure
 
-- List here sections for your your different JS files.
-- One for main.js to manage DOM elements, one for the Game class and one for each other class file of your game.
-- Inside each file you can list the functions, clases, properties and methods of your code.
-
-Example:
-
 ## main.js
 
 -chooseCharacter();
@@ -61,17 +55,17 @@ Example:
 ## Game.js
 
 - Game () {
-    this.character;
-    this.ObstaclesArr;
-    this.prizesArr;
-    this.frames;
-    this.count;
-    this.counterNodeNum;
+    * this.character;
+    * this.ObstaclesArr;
+    * this.prizesArr;
+    * this.frames;
+    * this.count;
+    * this.counterNodeNum;
 
-    this.obstaclePopUp();
-    this.prizePopUp();
-    this.collisionCharacterObstacle();
-    this.collisionCharacterPrize();
+    * this.obstaclePopUp();
+    * this.prizePopUp();
+    * this.collisionCharacterObstacle();
+    * this.collisionCharacterPrize();
 
 
 }
@@ -84,10 +78,10 @@ Example:
 ## Character.js 
 
 - Character () {
-    this.x;
-    this.y;
-    this.w;
-    this.h;
+    * this.x;
+    * this.y;
+    * this.w;
+    * this.h;
 }
 - moveUpEffect () 
 - moveDownEffect ()
@@ -96,10 +90,10 @@ Example:
 ## Prize.js 
 
 - Prize () {
-    this.x;
-    this.y;
-    this.w;
-    this.h;
+    * this.x;
+    * this.y;
+    * this.w;
+    * this.h;
 }
 - automaticMovement ()
 - positionUpdate() 
@@ -107,10 +101,10 @@ Example:
 ## Obstacle.js 
 
 - Obstacle () {
-    this.x;
-    this.y;
-    this.w;
-    this.h;
+    * this.x;
+    * this.y;
+    * this.w;
+    * this.h;
 }
 - automaticMovement ()
 - positionUpdate() 
