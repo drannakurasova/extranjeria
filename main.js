@@ -84,7 +84,7 @@ function enterGame() {
 
 function startGame() {
   alert(`¡Oh vosotros los que entráis, abandonad toda esperanza!`);
-  // console.log("starting");
+
   characterContainerNode.style.display = "none";
   splashScreen1Node.style.display = "none";
   splashScreen2Node.style.display = "none";
@@ -99,7 +99,6 @@ function startGame() {
   counterDisplayed.innerHTML = "FAVORABLE: 0 ";
 
   gameObject = new Game();
-  // console.log(gameObject);
 
   gameObject.gameLoop();
 }
@@ -116,9 +115,7 @@ document.addEventListener("keydown", (event) => {
 
   if (event.key === "ArrowUp") {
     gameObject.character.moveUpEffect();
-    // console.log("pressin arrow up");
   } else if (event.key === "ArrowDown") {
     gameObject.character.moveDownEffect();
-    //   console.log("pressin arrow up");
   }
 });

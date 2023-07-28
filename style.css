@@ -36,10 +36,6 @@ h1 {
 #restart-btn1,
 #restart-btn2 {
   background-color: rgb(202, 173, 27);
-  /* background-image: url("./images/startdoor.jpg");
-  background-position: center;
-  background-size: contain;
-  background-blend-mode: soft-light; */
   background-image: linear-gradient(rgb(219, 158, 5), rgb(217, 217, 156));
   color: rgb(16, 16, 241);
   padding: 50px;
@@ -81,17 +77,15 @@ h1 {
   font-size: 50px;
 }
 
-
 #character-container {
   position: relative;
   animation: slide-in 5s linear;
-  text-align: center ;
+  text-align: center;
   animation: slide-in 1000ms;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 #character-screen {
@@ -107,57 +101,49 @@ h1 {
 }
 
 @keyframes slide-in {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0%);
-    }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 #image {
- display:flex;
- flex-direction: column;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
 
 #img {
-  /* z-index: 99999; */
   display: flex;
   align-items: center;
   margin-top: 10px;
   height: auto;
   max-width: 200px;
-  /* animation: gloweffect 2s inifnite; */
 }
-/* 
-@keyframes gloweffect {
-  0%, 100% {filter:drop-shadow(0 0 0.35rem rgb(60, 0, 255));}
-  25% {filter: drop-shadow(0 0 0.65rem yellow);}
-  50% {filter: drop-shadow(0 0 0.85rem white);}
-} */
 
 #name {
-  /* position: absolute; */
-  z-index: 99999; /*for gloweffect to be not behind the card */
   font-size: 30pt;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   left: 25%;
   bottom: 10%;
   color: yellow;
 }
 
-#trump-first, #ceasar-first {
-position: relative;
-padding: 10px 15px;
-color: yellow;
-font-size: 40px;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-border-radius: 10%;
-margin-top: 10px;
-background-color: rgb(22, 22, 111);
-align-items: center;
+#trump-first,
+#ceasar-first {
+  position: relative;
+  padding: 10px 15px;
+  color: yellow;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border-radius: 10%;
+  margin-top: 10px;
+  background-color: rgb(22, 22, 111);
+  align-items: center;
 }
 
 #trump-first:hover {
@@ -171,9 +157,9 @@ align-items: center;
 }
 
 #start-btn3 {
-display: flex;
-flex-direction: column;
-align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .container {
@@ -189,40 +175,30 @@ align-items: end;
   position: absolute;
 }
 
-/* @keyframes constant-slide {
-  0% {
-    transform: translate(0);
-  }
-  100% {
-    transform: translate(-1000px); /* The image width */
-  /* }
-} */ 
-
 #game-box {
   background-color: darkgray;
   width: 1000px;
   height: 500px;
-
-  /* default settings for game box */
-  overflow: hidden; /* this will prevent element from been visible outside the game box */
-  position: relative; /* this will allow elements to be positioned relative to the game-box */
-  user-select: none; /* this will prevent elements from being highlighted */
-  background-image: url("./images/officegamebackground.jpg"); 
-  background-size: contain/*repeat-x*/;
-  /*animation: constant-slide 3s linear infinite; */
- }
-
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  background-image: url("./images/officegamebackground.jpg");
+  background-size: contain;
+}
 
 .elements {
   display: flex;
   flex-flow: column wrap;
-  /* justify-content:center; */
   align-items: center;
 }
 
 #counter {
   background-color: yellow;
-  background-image: linear-gradient(to right, rgb(255, 187, 0),rgb(249, 249, 245));
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 187, 0),
+    rgb(249, 249, 245)
+  );
   top: 20px;
   width: 150px;
   height: 80px;
@@ -240,7 +216,7 @@ align-items: end;
   position: relative;
   color: aliceblue;
   background-color: blue;
-  background-image: linear-gradient(to right, darkblue,lightblue);
+  background-image: linear-gradient(to right, darkblue, lightblue);
   margin-top: 20px;
   width: 100px;
   height: 100px;
