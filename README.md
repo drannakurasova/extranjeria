@@ -119,7 +119,7 @@ This game aims at annoying you rather than anything else // Este juego está hec
 [Link](https://trello.com/b/0srYCozu/ironhack-project-1
 )
 ### Slides
-[Link](www.your-slides-url-here.com)
+[Link](https://www.canva.com/design/DAFp6K9FpFs/C3ZkFHmQbC9WpBlTQGgJsQ/edit?locale=es-ES)
 
 ## Deploy
 [Link](https://drannakurasova.github.io/extranjeria/)
