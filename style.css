@@ -12,7 +12,7 @@ h1 {
   text-align: center;
   background-color: blue;
   font-size: 50px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-stretch: expanded;
   margin-top: 70px;
   padding: 10px 10px;
@@ -169,7 +169,6 @@ img {
   justify-content: center;
   align-items: center;
   margin: 50px;
-
 }
 
 #closed {
@@ -259,13 +258,12 @@ img {
   }
 
   h1 {
-  font-size: 2em;
+    font-size: 2em;
   }
 
   button {
     height: 60%;
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -274,7 +272,7 @@ img {
   }
 
   h1 {
-  font-size: 1.5em;
+    font-size: 1.5em;
   }
 
   button {
@@ -288,7 +286,7 @@ img {
   }
 
   h1 {
-  font-size: 1.5em;
+    font-size: 1.5em;
   }
 
   button {
@@ -296,6 +294,6 @@ img {
   }
 
   #game-box {
-    max-width: 1000px ;
+    max-width: 1000px;
   }
 }
